@@ -1,0 +1,11 @@
+object	rowdata_column
+MeRIP_IVT_WT	high_confidence_union
+MeRIP_IVT_WT	high_confidence_specific
+Perturb_eTAM	orthogonal_validation_status
+Perturb_eTAM	reference_site_source
+Perturb_GLORI	high_confidence_union
+Perturb_GLORI	high_confidence_specific
+Perturb_m6ACE	high_confidence_union
+Perturb_m6ACE	high_confidence_specific
+Perturb_MeRIP	high_confidence_union
+Perturb_MeRIP	high_confidence_specific

@@ -1,0 +1,40 @@
+# Raw and intermediate data
+*.rds
+*.RDS
+*.rda
+*.RData
+*.qs
+*.fst
+*.parquet
+
+# Fitted models and predictions
+*.conquernet.rds
+*oof_predictions*
+*posterior_full*
+*rank_cache*
+
+# Logs and scheduler files
+*.log
+*.out
+*.err
+nohup.out
+slurm-*.out
+
+# R and editor state
+.Rhistory
+.RData
+.Rproj.user/
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Secrets and keys
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+.env
+.env.*

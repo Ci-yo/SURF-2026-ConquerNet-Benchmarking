@@ -1,0 +1,17 @@
+"technology","strategy","task","identifiability_status","run_status","n_model_negative","n_model_positive","included_in_top20_or_shared"
+"CAM_seq","ChemicalConversion","calibration_tp_fp","untrainable_single_class","not_trainable_single_class",,,FALSE
+"DART_seq","EnzymeConversion","calibration_tp_fp","untrainable_single_class","not_trainable_single_class",,,FALSE
+"GLORI","ChemicalConversion","calibration_tp_fp","untrainable_single_class","not_trainable_single_class",,,FALSE
+"Oxford_nanopore_rna002_m6Anet","Nanopore","calibration_tp_fp","untrainable_single_class","not_trainable_single_class",,,FALSE
+"Oxford_nanopore_rna004_Dorado","Nanopore","calibration_tp_fp","untrainable_single_class","not_trainable_single_class",,,FALSE
+"Oxford_nanopore_rna004_SingleMod","Nanopore","calibration_tp_fp","exploratory_low_class_count","skipped_exploratory_by_policy",,,FALSE
+"CAM_seq","ChemicalConversion","error_fp_tn","untrainable_single_class","not_trainable_single_class",,,FALSE
+"DART_seq","EnzymeConversion","error_fp_tn","untrainable_single_class","not_trainable_single_class",,,FALSE
+"GLORI","ChemicalConversion","error_fp_tn","untrainable_single_class","not_trainable_single_class",,,FALSE
+"m6A_REF_seq","EnzymeCleavage","error_fp_tn","exploratory_low_class_count","skipped_exploratory_by_policy",,,FALSE
+"Oxford_nanopore_rna002_m6Anet","Nanopore","error_fp_tn","untrainable_single_class","not_trainable_single_class",,,FALSE
+"Oxford_nanopore_rna004_Dorado","Nanopore","error_fp_tn","untrainable_single_class","not_trainable_single_class",,,FALSE
+"Oxford_nanopore_rna004_SingleMod","Nanopore","error_fp_tn","exploratory_low_class_count","skipped_exploratory_by_policy",,,FALSE
+"CAM_seq","ChemicalConversion","artifact_tp_tn","untrainable_single_class","not_trainable_single_class",,,FALSE
+"DART_seq","EnzymeConversion","artifact_tp_tn","untrainable_single_class","not_trainable_single_class",,,FALSE
+"m6A_REF_seq","EnzymeCleavage","artifact_tp_tn","exploratory_low_class_count","skipped_exploratory_by_policy",,,FALSE

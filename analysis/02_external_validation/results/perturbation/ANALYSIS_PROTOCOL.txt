@@ -1,0 +1,11 @@
+Week7 C: perturbation response of no-calibration ConquerBN TP versus FP labels
+Benchmark: /home/xichen/ConquerNet/ConquerBN_basic/m6AConquer_hg38_BenchmarkDataSet_Combined_SE_no_cali.rds
+Labels: /home/xiyao/15data/W7/04_no_cali_tp_fp_labels/Total_gt_10/selected_tp_fp_class_matrix.rds
+Perturbation directory: /home/xiyao/15data/W7/purturbation
+Only contrasts with identifiable same-series controls are included.
+Each arm requires at least two replicates with Total>10 and finite m6ASiteProb at a site.
+Primary continuous response is mean(control m6ASiteProb) - mean(treatment m6ASiteProb).
+This sign is positive in the expected direction for writer loss and eraser overexpression.
+Primary hypothesis: TP response is greater than FP response.
+Secondary endpoints: positive signed response and MAP positive-to-negative transition.
+Control-free eTAM, GLORI FTO+, and unmatched perturbation samples are excluded.

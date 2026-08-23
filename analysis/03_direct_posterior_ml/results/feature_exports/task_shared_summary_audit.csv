@@ -1,0 +1,4 @@
+"task","n_reliable_complete_models","n_technologies_with_any_stable_feature","n_cross_technology_stable_features","n_shared_top20_exported","all_reliable_models_represented"
+"calibration_tp_fp",8,8,50,20,TRUE
+"error_fp_tn",7,7,52,20,TRUE
+"artifact_tp_tn",11,11,40,20,TRUE

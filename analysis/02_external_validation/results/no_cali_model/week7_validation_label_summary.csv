@@ -1,0 +1,3 @@
+"technology","coverage_rule","n_observed","global_n_TN","global_n_FN","global_n_FP","global_n_TP","global_n_unclassified","map_n_TN","map_n_FN","map_n_FP","map_n_TP","selected_label_source","selected_n_TN","selected_n_FN","selected_n_FP","selected_n_TP","selected_n_unclassified","tp_fp_status"
+"MeRIP_seq","Total>10",2689642,1358300,43143,38654,373806,875739,1757595,55100,167014,709933,"global_FDR_FOR",1358300,43143,38654,373806,875739,"reliably_identifiable"
+"GLORI","Total>10",1427970,834353,0,0,363448,230169,1035942,0,2,392026,"MAP_Viterbi_fallback",1035942,0,2,392026,0,"exploratory_low_minority"

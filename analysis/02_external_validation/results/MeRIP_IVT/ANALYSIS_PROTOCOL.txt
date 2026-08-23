@@ -1,0 +1,10 @@
+Week7 B: MeRIP IVT validation against no-calibration ConquerBN TP/FP labels
+Benchmark: /home/xichen/ConquerNet/ConquerBN_basic/m6AConquer_hg38_BenchmarkDataSet_Combined_SE_no_cali.rds
+Labels: /home/xiyao/15data/W7/04_no_cali_tp_fp_labels/Total_gt_10/selected_tp_fp_class_matrix.rds
+IVT data: /home/xiyao/15data/W7/IVT_MeRIP-seq/MeRIP_hg38_WT_m6A_SE_raw_sample_aggregated_m6A_SE.rds
+Coverage/call rule: each IVT and mRNA aggregate must have Total>10; MAP positive is m6ASiteProb>0.5.
+Primary summary: at least 2 of 3 antibodies.
+Supportive direction: TP enriched over FP among mRNA-specific calls.
+Artifact direction: FP enriched over TP among IVT-positive calls.
+Per-antibody endpoints are retained because antibody effects may differ.
+The inherited high_confidence_union/specific rowData annotations are not used as independent validation endpoints.

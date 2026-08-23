@@ -1,0 +1,6 @@
+"object","file","file_size_bytes","class","n_rows","n_samples","n_assays","n_coldata_fields","n_rowdata_fields","n_metadata_keys","genome_values","seqlevels_count","duplicated_coordinate_count"
+"MeRIP_IVT_WT","/home/xiyao/15data/W7/IVT_MeRIP-seq/MeRIP_hg38_WT_m6A_SE_raw_sample_aggregated_m6A_SE.rds",100723337,"RangedSummarizedExperiment",2788705,6,4,0,2,1,"hg38",25,0
+"Perturb_eTAM","/home/xiyao/15data/W7/purturbation/eTAM_hg38_Perturb_m6A_SE.rds",28552196,"RangedSummarizedExperiment",2788705,4,4,10,2,1,"hg38",25,0
+"Perturb_GLORI","/home/xiyao/15data/W7/purturbation/GLORI_hg38_Perturb_m6A_SE.rds",55978541,"RangedSummarizedExperiment",2788705,20,4,10,2,1,"hg38",25,0
+"Perturb_m6ACE","/home/xiyao/15data/W7/purturbation/m6ACE_hg38_Perturb_m6A_SE.rds",508063096,"RangedSummarizedExperiment",2788705,48,4,10,2,1,"hg38",25,0
+"Perturb_MeRIP","/home/xiyao/15data/W7/purturbation/MeRIP_hg38_Perturb_m6A_SE.rds",301561702,"RangedSummarizedExperiment",2788705,47,4,10,2,1,"hg38",25,0

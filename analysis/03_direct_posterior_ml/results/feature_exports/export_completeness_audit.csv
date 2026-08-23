@@ -1,0 +1,12 @@
+"check","expected","observed","pass"
+"reliable_complete_models",26,26,TRUE
+"per_model_top20_files",26,26,TRUE
+"all_top20_rows",520,520,TRUE
+"all_top20_unique_models",26,26,TRUE
+"all_top20_each_model_has_20_rows",1,1,TRUE
+"all_top20_ranks_are_1_to_20",1,1,TRUE
+"all_top20_only_reliable_complete",1,1,TRUE
+"importance_keys_equal_reliable_complete_keys",1,1,TRUE
+"shared_summary_only_uses_reliable_complete",1,1,TRUE
+"shared_top20_tasks",3,3,TRUE
+"shared_top20_rows",60,60,TRUE

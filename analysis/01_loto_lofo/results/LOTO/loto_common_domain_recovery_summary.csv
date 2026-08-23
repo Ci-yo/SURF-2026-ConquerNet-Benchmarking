@@ -1,0 +1,2 @@
+"coverage_cutoff","coverage_rule","n_folds","mean_old_idr_coverage","mean_new_idr_coverage","mean_old_common_n","mean_new_common_n","mean_common_n_recovered","relative_common_n_change"
+10,"Total>10",14,2010556.07142857,2192624.71428571,581014.285714286,610585.214285714,29570.9285714286,0.0508953554129479

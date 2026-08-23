@@ -1,0 +1,4 @@
+"task","n_technologies","macro_auroc","macro_auprc"
+"artifact_tp_tn",11,0.931942951982721,0.767614537362694
+"calibration_tp_fp",8,0.893783921655435,0.952859689363622
+"error_fp_tn",7,0.798831569663414,0.316300791073487

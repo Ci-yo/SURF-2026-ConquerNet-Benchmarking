@@ -1,0 +1,2 @@
+"analysis_version","dataset_path","coverage_rule","n_total_sites","n_training_sites","n_technologies","n_entries_passing_coverage","converged","iterations","final_log_likelihood","inference_loglik","runtime_minutes","posterior_min","posterior_max","orientation_method"
+"week7_no_cali_full_Total_gt_10_v1","/home/xichen/ConquerNet/ConquerBN_basic/m6AConquer_hg38_BenchmarkDataSet_Combined_SE_no_cali.rds","Total>10",2788705,2769532,14,11953195,TRUE,104,-45630001.2479325,-45629957.4831347,84.8915614326795,2.75673103098115e-19,1,"latent_param_label_switch_fixed_v1"

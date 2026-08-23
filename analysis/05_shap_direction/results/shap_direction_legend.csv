@@ -1,0 +1,3 @@
+"task","negative_class","positive_class","positive_shap_meaning","negative_shap_meaning","stable_direction_rule"
+"calibration_tp_fp","FP","TP","positive SHAP pushes prediction toward TP","negative SHAP pushes prediction toward FP","same non-zero direction in at least 4 of 5 chromosome folds"
+"error_fp_tn","TN","FP","positive SHAP pushes prediction toward FP","negative SHAP pushes prediction toward TN","same non-zero direction in at least 4 of 5 chromosome folds"

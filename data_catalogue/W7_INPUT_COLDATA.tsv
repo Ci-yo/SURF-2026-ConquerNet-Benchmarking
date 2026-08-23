@@ -1,0 +1,126 @@
+object	sample_index	sample_name	SampleID	Title	SourceDatabase	TissueOrCellLine	Organism	Treatment	DetectionTechnique	DataProcessing	CurationDate	BioSample
+MeRIP_IVT_WT	1	h293_MeRIP_Abcam_IVT_IP										
+MeRIP_IVT_WT	2	h293_MeRIP_Abcam_mRNA_IP										
+MeRIP_IVT_WT	3	h293_MeRIP_NEB_IVT_IP										
+MeRIP_IVT_WT	4	h293_MeRIP_NEB_mRNA_IP										
+MeRIP_IVT_WT	5	h293_MeRIP_SYSY_IVT_IP										
+MeRIP_IVT_WT	6	h293_MeRIP_SYSY_mRNA_IP										
+Perturb_eTAM	1	SRR21070399	SRR21070399	HeLa_polyA_WT_FTO+_rep3	GEO	HeLa	Homo Sapiens	FTO+	eTAM-seq	Cutadapt|Hisat3N|findOverlaps	Oct 24, 2022	SAMN30324093
+Perturb_eTAM	2	SRR21070400	SRR21070400	HeLa_polyA_WT_FTO+_rep2	GEO	HeLa	Homo Sapiens	FTO+	eTAM-seq	Cutadapt|Hisat3N|findOverlaps	Oct 24, 2022	SAMN30324094
+Perturb_eTAM	3	SRR21070401	SRR21070401	HeLa_polyA_WT_FTO+_rep1	GEO	HeLa	Homo Sapiens	FTO+	eTAM-seq	Cutadapt|Hisat3N|findOverlaps	Oct 24, 2022	SAMN30324095
+Perturb_eTAM	4	SRR21070402	SRR21070402	HeLa_polyA_WT_FTO+_rep1	GEO	HeLa	Homo Sapiens	FTO+	eTAM-seq	Cutadapt|Hisat3N|findOverlaps	Oct 24, 2022	SAMN30324095
+Perturb_GLORI	1	SRR21356205	SRR21356205	HEK293T_STM2457+_GLORI+_rep2	GEO	HEK293T	Homo Sapiens	STM2457+	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30155971
+Perturb_GLORI	2	SRR21356206	SRR21356206	HEK293T_STM2457+_GLORI+_rep1	GEO	HEK293T	Homo Sapiens	STM2457+	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30155972
+Perturb_GLORI	3	SRR21356209	SRR21356209	HeLa_STM2457+_GLORI+_rep2	GEO	HeLa	Homo Sapiens	STM2457+	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30155975
+Perturb_GLORI	4	SRR21356210	SRR21356210	HeLa_STM2457+_GLORI+_rep1	GEO	HeLa	Homo Sapiens	STM2457+	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30155976
+Perturb_GLORI	5	SRR21356213	SRR21356213	HeLa_siNC-YTHDF2_GLORI+_rep2	GEO	HeLa	Homo Sapiens	siNC-YTHDF2	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30155979
+Perturb_GLORI	6	SRR21356214	SRR21356214	HeLa_siNC-YTHDF2_GLORI+_rep1	GEO	HeLa	Homo Sapiens	siNC-YTHDF2	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30155980
+Perturb_GLORI	7	SRR21356217	SRR21356217	HeLa_siYTHDF2_GLORI+_rep2	GEO	HeLa	Homo Sapiens	siYTHDF2	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30155983
+Perturb_GLORI	8	SRR21356218	SRR21356218	HeLa_siYTHDF2_GLORI+_rep1	GEO	HeLa	Homo Sapiens	siYTHDF2	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30155984
+Perturb_GLORI	9	SRR21356221	SRR21356221	HeLa_siNC-writer_GLORI+_rep2	GEO	HeLa	Homo Sapiens	siNC-writer	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30155987
+Perturb_GLORI	10	SRR21356222	SRR21356222	HeLa_siNC-writer_GLORI+_rep1	GEO	HeLa	Homo Sapiens	siNC-writer	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30155988
+Perturb_GLORI	11	SRR21356225	SRR21356225	HeLa_siWTAP_GLORI+_rep2	GEO	HeLa	Homo Sapiens	siWTAP	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30155991
+Perturb_GLORI	12	SRR21356226	SRR21356226	HeLa_siWTAP_GLORI+_rep1	GEO	HeLa	Homo Sapiens	siWTAP	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30155992
+Perturb_GLORI	13	SRR21356229	SRR21356229	HeLa_siMETTL14_GLORI+_rep2	GEO	HeLa	Homo Sapiens	siMETTL14	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30155995
+Perturb_GLORI	14	SRR21356230	SRR21356230	HeLa_siMETTL14_GLORI+_rep1	GEO	HeLa	Homo Sapiens	siMETTL14	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30155996
+Perturb_GLORI	15	SRR21356233	SRR21356233	HeLa_siMETTL3_GLORI+_rep2	GEO	HeLa	Homo Sapiens	siMETTL3	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30155999
+Perturb_GLORI	16	SRR21356234	SRR21356234	HeLa_siMETTL3_GLORI+_rep1	GEO	HeLa	Homo Sapiens	siMETTL3	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30156000
+Perturb_GLORI	17	SRR21356242	SRR21356242	HeLa_hypoxia+_GLORI+_rep2	GEO	HeLa	Homo Sapiens	hypoxia+	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30156008
+Perturb_GLORI	18	SRR21356243	SRR21356243	HeLa_hypoxia+_GLORI+_rep1	GEO	HeLa	Homo Sapiens	hypoxia+	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30156009
+Perturb_GLORI	19	SRR21356247	SRR21356247	HEK293T_FTO+_GLORI+_rep2	GEO	HEK293T	Homo Sapiens	FTO+	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30156013
+Perturb_GLORI	20	SRR21356248	SRR21356248	HEK293T_FTO+_GLORI+_rep1	GEO	HEK293T	Homo Sapiens	FTO+	GLORI	TrimGalore|Fastp|STAR|bowtie|findOverlaps	Aug 06, 2022	SAMN30156014
+Perturb_m6ACE	1	SRR11015605	SRR11015605	Mettl4-KO rep1 m6ACE	GEO	HEK293T	Homo Sapiens	Mettl4_KO	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Aug 17, 2020	SAMN13981632
+Perturb_m6ACE	2	SRR11015606	SRR11015606	Mettl4-KO rep2 m6ACE	GEO	HEK293T	Homo Sapiens	Mettl4_KO	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Aug 17, 2020	SAMN13981631
+Perturb_m6ACE	3	SRR11015607	SRR11015607	Mettl4-KO rep3 m6ACE	GEO	HEK293T	Homo Sapiens	Mettl4_KO	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Aug 17, 2020	SAMN13981630
+Perturb_m6ACE	4	SRR11015608	SRR11015608	METTL4_WT_rescue rep1 m6ACE	GEO	HEK293T	Homo Sapiens	METTL4_WT_rescue	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Aug 17, 2020	SAMN13981629
+Perturb_m6ACE	5	SRR11015609	SRR11015609	METTL4_WT_rescue rep2 m6ACE	GEO	HEK293T	Homo Sapiens	METTL4_WT_rescue	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Aug 17, 2020	SAMN13981628
+Perturb_m6ACE	6	SRR11015610	SRR11015610	METTL4_WT_rescue rep3 m6ACE	GEO	HEK293T	Homo Sapiens	METTL4_WT_rescue	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Aug 17, 2020	SAMN13981627
+Perturb_m6ACE	7	SRR11015611	SRR11015611	METTL4_CD_rescue rep1 m6ACE	GEO	HEK293T	Homo Sapiens	METTL4_CD_rescue	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Aug 17, 2020	SAMN13981623
+Perturb_m6ACE	8	SRR11015612	SRR11015612	METTL4_CD_rescue rep2 m6ACE	GEO	HEK293T	Homo Sapiens	METTL4_CD_rescue	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Aug 17, 2020	SAMN13981622
+Perturb_m6ACE	9	SRR11015613	SRR11015613	METTL4_CD_rescue rep3 m6ACE	GEO	HEK293T	Homo Sapiens	METTL4_CD_rescue	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Aug 17, 2020	SAMN13981621
+Perturb_m6ACE	10	SRR8380782	SRR8380782	Mettl3-KO rep1	GEO	HEK293T	Homo Sapiens	Mettl3_KO	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN10663069
+Perturb_m6ACE	11	SRR8380784	SRR8380784	Mettl3-KO rep2	GEO	HEK293T	Homo Sapiens	Mettl3_KO	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN10663067
+Perturb_m6ACE	12	SRR8380786	SRR8380786	Mettl3-KO rep3	GEO	HEK293T	Homo Sapiens	Mettl3_KO	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN10663065
+Perturb_m6ACE	13	SRR8380788	SRR8380788	Mettl16-KD rep1	GEO	HEK293T	Homo Sapiens	Mettl16_KD	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN10663063
+Perturb_m6ACE	14	SRR8380800	SRR8380800	Alkbh5-KO rep1	GEO	HEK293T	Homo Sapiens	Alkbh5_KO	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN10663051
+Perturb_m6ACE	15	SRR8380802	SRR8380802	Alkbh5-KO rep2	GEO	HEK293T	Homo Sapiens	Alkbh5_KO	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN10663049
+Perturb_m6ACE	16	SRR8380804	SRR8380804	Alkbh5-KO rep3	GEO	HEK293T	Homo Sapiens	Alkbh5_KO	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN10663078
+Perturb_m6ACE	17	SRR8380806	SRR8380806	Fto-KO rep1	GEO	HEK293T	Homo Sapiens	Fto_KO	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN10663047
+Perturb_m6ACE	18	SRR8380808	SRR8380808	Fto-KO rep2	GEO	HEK293T	Homo Sapiens	Fto_KO	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN10663045
+Perturb_m6ACE	19	SRR8380810	SRR8380810	Fto-KO rep3	GEO	HEK293T	Homo Sapiens	Fto_KO	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN10663079
+Perturb_m6ACE	20	SRR9060600	SRR9060600	Pcif1-KO rep1	GEO	HEK293T	Homo Sapiens	Pcif1_KO	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654419
+Perturb_m6ACE	21	SRR9060602	SRR9060602	Pcif1-KO rep2	GEO	HEK293T	Homo Sapiens	Pcif1_KO	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654417
+Perturb_m6ACE	22	SRR9060604	SRR9060604	Pcif1-KO rep3	GEO	HEK293T	Homo Sapiens	Pcif1_KO	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654415
+Perturb_m6ACE	23	SRR9060606	SRR9060606	Fto OE rep1	GEO	HEK293T	Homo Sapiens	Fto_OE	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654413
+Perturb_m6ACE	24	SRR9060608	SRR9060608	Fto OE rep2	GEO	HEK293T	Homo Sapiens	Fto_OE	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654411
+Perturb_m6ACE	25	SRR9060610	SRR9060610	Fto OE rep3	GEO	HEK293T	Homo Sapiens	Fto_OE	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654406
+Perturb_m6ACE	26	SRR9060612	SRR9060612	WT 100% Mettl3-KO 0% rep1	GEO	HEK293T	Homo Sapiens	WT_100%_Mettl3_KO_0%	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654404
+Perturb_m6ACE	27	SRR9060614	SRR9060614	WT 75% Mettl3-KO 25% rep1	GEO	HEK293T	Homo Sapiens	WT_75%_Mettl3_KO_25%	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654409
+Perturb_m6ACE	28	SRR9060616	SRR9060616	WT 50% Mettl3-KO 50% rep1	GEO	HEK293T	Homo Sapiens	WT_50%_Mettl3_KO_50%	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654403
+Perturb_m6ACE	29	SRR9060618	SRR9060618	WT 25% Mettl3-KO 75% rep1	GEO	HEK293T	Homo Sapiens	WT_25%_Mettl3_KO_75%	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654441
+Perturb_m6ACE	30	SRR9060620	SRR9060620	WT 0% Mettl3-KO 100% rep1	GEO	HEK293T	Homo Sapiens	WT_0%_Mettl3_KO_100%	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654439
+Perturb_m6ACE	31	SRR9060622	SRR9060622	WT 100% Mettl3-KO 0% rep2	GEO	HEK293T	Homo Sapiens	WT_100%_Mettl3_KO_0%	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654437
+Perturb_m6ACE	32	SRR9060624	SRR9060624	WT 75% Mettl3-KO 25% rep2	GEO	HEK293T	Homo Sapiens	WT_75%_Mettl3_KO_25%	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654435
+Perturb_m6ACE	33	SRR9060626	SRR9060626	WT 50% Mettl3-KO 50% rep2	GEO	HEK293T	Homo Sapiens	WT_50%_Mettl3_KO_50%	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654432
+Perturb_m6ACE	34	SRR9060628	SRR9060628	WT 25% Mettl3-KO 75% rep2	GEO	HEK293T	Homo Sapiens	WT_25%_Mettl3_KO_75%	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654430
+Perturb_m6ACE	35	SRR9060630	SRR9060630	WT 0% Mettl3-KO 100% rep2	GEO	HEK293T	Homo Sapiens	WT_0%_Mettl3_KO_100%	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654428
+Perturb_m6ACE	36	SRR9060632	SRR9060632	WT 100% Mettl3-KO 0% rep3	GEO	HEK293T	Homo Sapiens	WT_100%_Mettl3_KO_0%	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654425
+Perturb_m6ACE	37	SRR9060634	SRR9060634	WT 75% Mettl3-KO 25% rep3	GEO	HEK293T	Homo Sapiens	WT_75%_Mettl3_KO_25%	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654423
+Perturb_m6ACE	38	SRR9060636	SRR9060636	WT 50% Mettl3-KO 50% rep3	GEO	HEK293T	Homo Sapiens	WT_50%_Mettl3_KO_50%	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654421
+Perturb_m6ACE	39	SRR9060638	SRR9060638	WT 25% Mettl3-KO 75% rep3	GEO	HEK293T	Homo Sapiens	WT_25%_Mettl3_KO_75%	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654459
+Perturb_m6ACE	40	SRR9060640	SRR9060640	WT 0% Mettl3-KO 100% rep3	GEO	HEK293T	Homo Sapiens	WT_0%_Mettl3_KO_100%	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN11654457
+Perturb_m6ACE	41	SRR9073880	SRR9073880	Mettl16-KD rep2	GEO	HEK293T	Homo Sapiens	Mettl16_KD	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN10663061
+Perturb_m6ACE	42	SRR9073882	SRR9073882	Mettl16-KD rep3	GEO	HEK293T	Homo Sapiens	Mettl16_KD	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN10663059
+Perturb_m6ACE	43	SRR9905081	SRR9905081	WT_abcam151230 rep1	GEO	HEK293T	Homo Sapiens	WT_abcam151230	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN12497385
+Perturb_m6ACE	44	SRR9905083	SRR9905083	WT_abcam151230 rep2	GEO	HEK293T	Homo Sapiens	WT_abcam151230	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN12497383
+Perturb_m6ACE	45	SRR9905085	SRR9905085	WT_abcam151230 rep3	GEO	HEK293T	Homo Sapiens	WT_abcam151230	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN12497380
+Perturb_m6ACE	46	SRR9905087	SRR9905087	WT_sysy202111 rep1	GEO	HEK293T	Homo Sapiens	WT_sysy202111	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN12497378
+Perturb_m6ACE	47	SRR9905089	SRR9905089	WT_sysy202111 rep2	GEO	HEK293T	Homo Sapiens	WT_sysy202111	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN12497376
+Perturb_m6ACE	48	SRR9905091	SRR9905091	WT_sysy202111 rep3	GEO	HEK293T	Homo Sapiens	WT_sysy202111	m6ACE-seq	Fastp|STAR|summarizedOverlaps	Sep 20, 2019	SAMN12497374
+Perturb_MeRIP	1	SRR11575355	SRR11575355	shMETTL3_M6a_IP_1	GEO	HTR8SVneo	Homo Sapiens	shMETTL3	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Dec 01, 2020	SAMN14646171
+Perturb_MeRIP	2	SRR11575356	SRR11575356	shMETTL3_M6a_IP_2	GEO	HTR8SVneo	Homo Sapiens	shMETTL3	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Dec 01, 2020	SAMN14646170
+Perturb_MeRIP	3	SRR11626645	SRR11626645	OE1-IP	GEO	HCCLM3	Homo Sapiens	ALKBH5+	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Aug 11, 2020	SAMN14760497
+Perturb_MeRIP	4	SRR11626647	SRR11626647	OE2-IP	GEO	HCCLM3	Homo Sapiens	ALKBH5+	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Aug 11, 2020	SAMN14760495
+Perturb_MeRIP	5	SRR1182591	SRR1182591	human_Exp1siWTAP	GEO	HEK293T	Homo Sapiens	Exp1siWTAP	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Jul 18, 2014	SAMN02673120
+Perturb_MeRIP	6	SRR1182593	SRR1182593	human_Exp1siMETTL3	GEO	HEK293T	Homo Sapiens	Exp1siMETTL3	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Jul 18, 2014	SAMN02673126
+Perturb_MeRIP	7	SRR1182603	SRR1182603	human_shWTAP_rep1	GEO	A549	Homo Sapiens	shWTAP	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Jul 18, 2014	SAMN02673133
+Perturb_MeRIP	8	SRR1182605	SRR1182605	human_shWTAP_rep2	GEO	A549	Homo Sapiens	shWTAP	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Jul 18, 2014	SAMN02673131
+Perturb_MeRIP	9	SRR1182607	SRR1182607	human_shMETTL14_1_rep1	GEO	A549	Homo Sapiens	shMETTL14	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Jul 18, 2014	SAMN02673137
+Perturb_MeRIP	10	SRR1182609	SRR1182609	human_shMETTL14_3_rep1	GEO	A549	Homo Sapiens	shMETTL14	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Jul 18, 2014	SAMN02673116
+Perturb_MeRIP	11	SRR1182611	SRR1182611	human_shMETTL14_1_rep2	GEO	A549	Homo Sapiens	shMETTL14	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Jul 18, 2014	SAMN02673118
+Perturb_MeRIP	12	SRR1182613	SRR1182613	human_shMETTL14_3_rep2	GEO	A549	Homo Sapiens	shMETTL14	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Jul 18, 2014	SAMN02673136
+Perturb_MeRIP	13	SRR1182615	SRR1182615	human_shMETTL3_rep1	GEO	A549	Homo Sapiens	shMETTL3	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Jul 18, 2014	SAMN02673138
+Perturb_MeRIP	14	SRR1182617	SRR1182617	human_shMETTL3_rep2	GEO	A549	Homo Sapiens	shMETTL3	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Jul 18, 2014	SAMN02673140
+Perturb_MeRIP	15	SRR1182619	SRR1182619	human_shGFP_2	GEO	A549	Homo Sapiens	shGFP	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Jul 18, 2014	SAMN02673147
+Perturb_MeRIP	16	SRR1182621	SRR1182621	human_shGFP_1_rep1	GEO	A549	Homo Sapiens	shGFP	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Jul 18, 2014	SAMN02673143
+Perturb_MeRIP	17	SRR1182623	SRR1182623	human_shGFP_1_rep2	GEO	A549	Homo Sapiens	shGFP	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Jul 18, 2014	SAMN02673151
+Perturb_MeRIP	18	SRR1182627	SRR1182627	human_Exp2siKIAA1429	GEO	A549	Homo Sapiens	Exp2siKIAA1429	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Jul 18, 2014	SAMN02673153
+Perturb_MeRIP	19	SRR1182631	SRR1182631	human_Exp2siMETTL3andsiMETTL14	GEO	A549	Homo Sapiens	Exp2siMETTL3andsiMETTL14	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Jul 18, 2014	SAMN02673159
+Perturb_MeRIP	20	SRR12235502	SRR12235502	METTL3-KD IP	GEO	K180	Homo Sapiens	METTL3_KD	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Mar 05, 2021	SAMN15550736
+Perturb_MeRIP	21	SRR13084758	SRR13084758	MRC5-UV-30min-IP rep1	GEO	MRC5	Homo Sapiens	MRC5-UV-30min	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Nov 20, 2020	SAMN16834441
+Perturb_MeRIP	22	SRR13084760	SRR13084760	MRC5-UV-30min-IP rep2	GEO	MRC5	Homo Sapiens	MRC5-UV-30min	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Nov 20, 2020	SAMN16834439
+Perturb_MeRIP	23	SRR13084762	SRR13084762	MRC5-UV-3hr-IP rep1	GEO	MRC5	Homo Sapiens	MRC5-UV-3hr	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Nov 20, 2020	SAMN16834437
+Perturb_MeRIP	24	SRR13084764	SRR13084764	MRC5-UV-3hr-IP rep2	GEO	MRC5	Homo Sapiens	MRC5-UV-3hr	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Nov 20, 2020	SAMN16834435
+Perturb_MeRIP	25	SRR13084766	SRR13084766	MRC5-UV-24hr-IP rep1	GEO	MRC5	Homo Sapiens	MRC5-UV-24hr	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Nov 20, 2020	SAMN16834456
+Perturb_MeRIP	26	SRR13084768	SRR13084768	MRC5-UV-24hr-IP rep2	GEO	MRC5	Homo Sapiens	MRC5-UV-24hr	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Nov 20, 2020	SAMN16834454
+Perturb_MeRIP	27	SRR13948596	SRR13948596	CoCl2_1_IP	GEO	Kasumi_1	Homo Sapiens	CoCl2	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Mar 12, 2021	SAMN18274963
+Perturb_MeRIP	28	SRR13948597	SRR13948597	CoCl2_2_IP	GEO	Kasumi_1	Homo Sapiens	CoCl4	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Mar 12, 2021	SAMN18274962
+Perturb_MeRIP	29	SRR13948598	SRR13948598	CoCl2_3_IP	GEO	Kasumi_1	Homo Sapiens	CoCl6	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Mar 12, 2021	SAMN18274961
+Perturb_MeRIP	30	SRR14134655	SRR14134655	Induced3.IP	GEO	HUCMSCs	Homo Sapiens	Osteogenic_induced	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	May 31, 2021	SAMN18603862
+Perturb_MeRIP	31	SRR14142652	SRR14142652	H6658, FTO knockdown, IP	GEO	H322	Homo Sapiens	FTO_KD	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Apr 06, 2021	SAMN18616932
+Perturb_MeRIP	32	SRR5080310	SRR5080310	siMETT16 m6A IP_rep1	GEO	HEK293A	Homo Sapiens	siMETTL16	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	May 18, 2017	SAMN06113275
+Perturb_MeRIP	33	SRR5080311	SRR5080311	siMETT16 m6A IP_rep2	GEO	HEK293A	Homo Sapiens	siMETTL16	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	May 18, 2017	SAMN06113274
+Perturb_MeRIP	34	SRR5080312	SRR5080312	siMETT16 m6A IP_rep3	GEO	HEK293A	Homo Sapiens	siMETTL16	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	May 18, 2017	SAMN06113273
+Perturb_MeRIP	35	SRR7829547	SRR7829547	m6A pulldown, resistant cells	GEO	ParentalPEO1	Homo Sapiens	WT	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Sep 14, 2019	SAMN10060483
+Perturb_MeRIP	36	SRR7881529	SRR7881529	IP siRNA rep1	GEO	HEK293T	Homo Sapiens	Pcif1_KD	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Dec 20, 2018	SAMN10095391
+Perturb_MeRIP	37	SRR7881530	SRR7881530	IP siRNA rep2	GEO	HEK293T	Homo Sapiens	Pcif1_KD	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Dec 20, 2018	SAMN10095390
+Perturb_MeRIP	38	SRR8742555	SRR8742555	hela.1.OE.sfpq.IP	GEO	HeLa	Homo Sapiens	SFPQ_OE	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Mar 19, 2019	
+Perturb_MeRIP	39	SRR8742559	SRR8742559	hela.2.OE.sfpq.IP	GEO	HeLa	Homo Sapiens	SFPQ_OE	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Mar 19, 2019	
+Perturb_MeRIP	40	SRR8742563	SRR8742563	hela.3.OE.sfpq.IP	GEO	HeLa	Homo Sapiens	SFPQ_OE	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Mar 19, 2019	
+Perturb_MeRIP	41	SRR8755807	SRR8755807	THP1 A5-res rep-1 (m6A-seq)	GEO	THP1	Homo Sapiens	A5-res	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	May 27, 2020	SAMN11175489
+Perturb_MeRIP	42	SRR8755808	SRR8755808	THP1 A5-res rep-2 (m6A-seq)	GEO	THP1	Homo Sapiens	A5-res	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	May 27, 2020	SAMN11175488
+Perturb_MeRIP	43	SRR8755809	SRR8755809	THP1 shA5 rep-1 (m6A-seq)	GEO	THP1	Homo Sapiens	shA5	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	May 27, 2020	SAMN11175487
+Perturb_MeRIP	44	SRR8755810	SRR8755810	THP1 shA5 rep-2 (m6A-seq)	GEO	THP1	Homo Sapiens	shA5	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	May 27, 2020	SAMN11175486
+Perturb_MeRIP	45	SRR8889200	SRR8889200	si-YTHDF3-1_input	GEO	HCT116	Homo Sapiens	siYTHDF3	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Oct 29, 2019	SAMN11405581
+Perturb_MeRIP	46	SRR8889202	SRR8889202	si-YTHDF3-2_input	GEO	HCT116	Homo Sapiens	siYTHDF3	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Oct 29, 2019	SAMN11405579
+Perturb_MeRIP	47	SRR9336433	SRR9336433	SH-METTL3 IP	GEO	BGC823	Homo Sapiens	shMETTL3	MeRIP-seq	TrimGalore|Hisat2|summarizedOverlaps	Oct 29, 2019	SAMN12107219
