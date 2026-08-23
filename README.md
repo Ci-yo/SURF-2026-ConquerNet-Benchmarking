@@ -2,6 +2,22 @@
 
 This repository is a compact, reproducible record of the final analysis route used in the SURF project. It contains analysis code, small audit tables, summary metrics and figures. Raw sequencing data, fitted model objects, per-site posterior files and OOF prediction objects are intentionally excluded.
 
+## Analysis overview
+
+```mermaid
+flowchart LR
+    A[Multi-technology m6A data] --> B[Total > 10 filtering]
+    B --> C[LOTO / LOFO reconstruction]
+    B --> D[Direct TN / FN / FP / TP posteriors]
+    C --> E[ConquerBN vs MeanProb / IDR / rank methods]
+    D --> F[TP-vs-FP / FP-vs-TN / TP-vs-TN random forests]
+    F --> G[Permutation importance and exact SHAP direction]
+    D --> H[FP / TP metagene distributions]
+    D --> I[IVT and perturbation consistency checks]
+```
+
+The evidence chain deliberately separates internal signal reconstruction, model-derived error classes, feature-dependent discrimination, positional patterns and external consistency checks.
+
 ## Final analysis scope
 
 ### 1. Leave-one-technology-out (LOTO)
@@ -74,6 +90,14 @@ All 26 completed models passed OOF row-index, missing-value and probability-rang
 - The MeRIP IVT 2-of-3 endpoint did **not** preferentially support the model-derived TP class: IVT-positive rates were 11.4% for TP and 16.7% for FP. This is retained as an important negative result, not hidden.
 - Perturbation responsiveness was contrast-dependent and did not provide a universal TP-over-FP advantage.
 - Exact SHAP reconstruction completed for 11 core TP-vs-FP/FP-vs-TN models; maximum raw and corrected OOF reproduction error was zero, and 105/110 inspected feature directions were stable across at least four folds.
+
+## Proposed integrative displays
+
+These are next-step visualization designs enabled by the deposited results; they have not yet been generated and should not be confused with completed analyses.
+
+1. **Technology evidence landscape** — place each technology by held-out reconstruction performance and FP-vs-TN learnability, with point size showing FP count and colour showing technology family. This would reveal which technologies are both recoverable from orthogonal evidence and associated with predictable error structure.
+2. **Technology error atlas** — one card per technology combining four-class counts, task-specific AUROC/AUPRC, leading SHAP directions and the FP/TP metagene curve. This would preserve technology-specific patterns that disappear in a single macro-average.
+3. **Evidence-ladder figure** — connect LOTO/LOFO reconstruction, posterior class calling, feature-based discrimination, transcript-position patterns and IVT/perturbation validation in one figure. Positive and negative external findings should be shown together.
 
 ## Repository map
 
