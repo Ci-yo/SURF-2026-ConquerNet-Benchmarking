@@ -18,6 +18,16 @@ flowchart LR
 
 The evidence chain deliberately separates internal signal reconstruction, model-derived error classes, feature-dependent discrimination, positional patterns and external consistency checks.
 
+## Result figures
+
+![Summary of LOTO, LOFO and direct-posterior random-forest performance](figures/readme_results_summary.png)
+
+**Performance overview.** Circles denote AUROC and squares denote AUPRC. Panels **a** and **b** compare ConquerBN with four baseline integration methods using 14 held-out technologies and five independent held-out families, respectively. Panel **c** summarizes the completed direct-posterior random-forest tasks. Values are descriptive macro averages; detailed per-unit metrics and QC tables are retained in the corresponding analysis modules. [Source data](figures/source_data/readme_summary_metrics.csv) | [R plotting code](figures/code/plot_readme_summary.R) | [Vector PDF](figures/readme_results_summary.pdf)
+
+![FP and TP distributions along the standardized transcript metagene](analysis/04_metagene/results/main_figure/reliable_technologies_FP_vs_TP_standard_metagene.png)
+
+**Posterior-derived FP/TP metagene profiles.** Curves show the eight technologies meeting the teacher-approved running threshold on a standardized 5′UTR–CDS–3′UTR axis. Small FP groups, particularly m6A-SAC and DeepRM, remain exploratory and are interpreted cautiously. [Effect sizes and QC](analysis/04_metagene/results/effect_sizes/) | [R plotting code](analysis/04_metagene/code/06_plot_fp_tp_standard_metagene.R)
+
 ## Final analysis scope
 
 ### 1. Leave-one-technology-out (LOTO)
