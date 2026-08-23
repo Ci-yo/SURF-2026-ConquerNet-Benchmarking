@@ -102,4 +102,4 @@ The analyses use R with `SummarizedExperiment`, `GenomicRanges`, `S4Vectors`, `b
 
 ## Release status
 
-This is a research snapshot for supervisor and collaborator review. Keep the GitHub repository private until data ownership, collaborator attribution and public-release permission are confirmed.
+This is a public research snapshot of the finalized SURF analysis workflow. It is intended to make the computational route, compact audit evidence and current findings reviewable without redistributing the underlying sequencing data or fitted model objects. Results remain subject to supervisor/collaborator review and should not be treated as a final manuscript release.
