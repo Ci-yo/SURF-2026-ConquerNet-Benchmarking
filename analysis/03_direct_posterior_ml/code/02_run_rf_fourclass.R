@@ -12,7 +12,7 @@ suppressPackageStartupMessages({
 args <- commandArgs(trailingOnly = TRUE)
 if (length(args) < 2L) {
   stop(
-    "Usage: Rscript 03_run_week8_rf_fourclass.R TECHNOLOGY TASK ",
+    "Usage: Rscript 02_run_rf_fourclass.R TECHNOLOGY TASK ",
     "[--include-exploratory=false] [--ntree=300] ",
     "[--max-per-class=100000] [--nthread=8] [--smoke-n=0]"
   )
@@ -41,7 +41,7 @@ as_flag <- function(x) {
 num_trees <- as.integer(value_or("ntree", "300"))
 max_per_class <- as.integer(value_or("max-per-class", "100000"))
 n_thread <- as.integer(value_or("nthread", "8"))
-min_reliable <- as.integer(value_or("min-reliable", "1000"))
+min_reliable <- as.integer(value_or("min-reliable", "51"))
 smoke_n <- as.integer(value_or("smoke-n", "0"))
 include_exploratory <- as_flag(value_or("include-exploratory", "false"))
 seed <- as.integer(value_or("seed", "20260812"))

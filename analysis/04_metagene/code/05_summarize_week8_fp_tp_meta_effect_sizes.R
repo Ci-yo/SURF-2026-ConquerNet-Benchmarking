@@ -36,7 +36,7 @@ parse_cli <- function(args) {
       "Total_gt_10_no_cali_IVT_matched/effect_sizes"
     ),
     coverage_cutoff = "10",
-    reliability_min_per_class = "1000",
+    reliability_min_per_class = "51",
     bootstrap_max_per_class = "10000",
     bootstrap_repeats = "500",
     bootstrap_seed = "20260812"

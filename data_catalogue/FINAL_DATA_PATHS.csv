@@ -1,0 +1,16 @@
+section,input_name,server_path,object_or_format,purpose,publicly_included
+benchmark,original_combined_SE,/home/xichen/ConquerNet/ConquerBN_basic/m6AConquer_hg38_BenchmarkDataSet_Combined_SE.rds,SummarizedExperiment 2788705x14,"Final Total>10 LOTO/LOFO counts and held-out BBmix MAP truth",no
+benchmark,LOTO_continuous_IDR,/home/xichen/ConquerNet/ConquerBN_basic/LOTO_IDR,directory,"Continuous technology-out IDR comparator",no
+benchmark,LOFO_continuous_IDR,/home/xichen/ConquerNet/ConquerBN_basic/LOFO_IDR,directory,"Continuous family-out IDR comparator",no
+four_class,no_cali_IVT_matched_SE,/home/xichen/ConquerNet/ConquerBN_basic/m6AConquer_hg38_BenchmarkDataSet_Combined_SE_no_cali_IVT_matched.rds,SummarizedExperiment 2788705x14,"Current four-class coverage and transcript-feature universe",no
+four_class,no_cali_full_model,/home/xiyao/15data/W7/06_no_cali_IVT_matched_full_model/Global_no_additional_coverage/full_no_cali_global.conquernet.rds,ConquerBN model RDS,"Direct TN/FN/FP/TP joint posterior inference",no
+features,OmicsFeatures,/home/xiyao/15data/W8/input_data/features/m6Aconquer_omicsFeatures_hg38.rds,GRanges RDS 550125832 bytes,"185-feature random-forest screening",no
+features,RF_design_metadata,/home/xiyao/15data/W8/input_data/rf_design/tp_fp_tp_tn_metadata.rds,RDS 33959 bytes,"Predictor names and chromosome fold design",no
+generated,four_class_outputs,/home/xiyao/15data/W8/results/01_four_class_global_fdr,directory,"Direct posterior files, class matrices and audits",no
+generated,RF_models,/home/xiyao/15data/W8/results/03_rf_four_class_global_fdr,directory,"Per-fold RF objects, importance and OOF prediction files",no
+generated,RF_summary_min51,/home/xiyao/15data/W8/results/04_rf_four_class_summary_min51,directory,"Current >50-per-class task and performance summary",no
+generated,Top20_min51,/home/xiyao/15data/W8/results/05_rf_feature_exports_min51,directory,"Current per-model and shared Top-20 tables",no
+generated,FP_TP_metagene,/home/xiyao/15data/W8/results/02_fp_tp_meta_distributions/Total_gt_10_no_cali_IVT_matched,directory,"Current eight-technology plots and effect-size/QC tables",no
+external,MeRIP_IVT,/home/xichen/MeRIP-seq/workspace/m6ACE_seq/3.SummarizedExperiment/MeRIP_hg38_WT_m6A_SE_raw_sample_aggregated_m6A_SE.rds,RangedSummarizedExperiment,"Independent MeRIP IVT consistency analysis",no
+release,compact_results,analysis and figures directories,CSV PNG PDF,"Small public audit results and figures",yes
+release,SURF_poster,poster/SURF2026_Poster.pptx and poster/SURF2026_Poster.png,PPTX and PNG,"Full SURF group poster source and preview",yes

@@ -29,7 +29,7 @@ output_dir <- get_arg(
   "/home/xiyao/15data/W8/results/02_fp_tp_meta_distributions/Total_gt_10_no_cali_IVT_matched/standard_metagene"
 )
 coverage_cutoff <- as.numeric(get_arg("coverage-cutoff", "10"))
-min_class <- as.integer(get_arg("min-class", "1000"))
+min_class <- as.integer(get_arg("min-class", "51"))
 bw <- as.numeric(get_arg("bandwidth", "0.02"))
 n_grid <- as.integer(get_arg("n-grid", "512"))
 

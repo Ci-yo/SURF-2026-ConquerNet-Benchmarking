@@ -1,89 +1,129 @@
-# SURF 2026: ConquerNet benchmarking and technology-error modelling
+<h1 align="center">SURF 2026 · ConquerNet Evidence & Reliability Atlas</h1>
 
-This repository is a compact, reproducible record of the final analysis route used in the SURF project. It contains analysis code, small audit tables, summary metrics and figures. Raw sequencing data, fitted model objects, per-site posterior files and OOF prediction objects are intentionally excluded.
+<p align="center">
+  <strong>Benchmarking multi-technology m6A integration, posterior-derived error states,<br>
+  genomic feature signatures and independent biological consistency</strong>
+</p>
 
-## Analysis overview
+<p align="center">
+  <code>2,788,705 sites</code> · <code>14 technologies</code> · <code>5 families</code> ·
+  <code>Total &gt; 10</code> · <code>no-IVT-calibration labels</code>
+</p>
+
+> [!IMPORTANT]
+> This repository is a compact evidence record, not a data dump. It contains
+> executable analysis code, small audit tables, summary results, figures and the
+> SURF poster. Raw sequencing objects, fitted models, per-site posterior matrices
+> and OOF prediction vectors remain on the project server.
+
+<p align="center">
+  <img src="figures/readme_results_summary.png" width="930"
+       alt="LOTO, LOFO and direct-posterior random-forest performance summary">
+</p>
+
+## Why this project exists
+
+m6A technologies do not observe the same biochemical signal in the same way.
+ConquerNet integrates orthogonal technologies in a hierarchical Bayesian model;
+this project asks not only whether that integration reconstructs held-out signal,
+but also **where and why individual technologies disagree with the integrated
+model**.
+
+The analysis therefore follows an evidence ladder rather than treating one AUROC
+as the whole story:
 
 ```mermaid
 flowchart LR
-    A[Multi-technology m6A data] --> B[Total > 10 filtering]
-    B --> C[LOTO / LOFO reconstruction]
-    B --> D[Direct TN / FN / FP / TP posteriors]
-    C --> E[ConquerBN vs MeanProb / IDR / rank methods]
-    D --> F[TP-vs-FP / FP-vs-TN / TP-vs-TN random forests]
-    F --> G[Permutation importance and exact SHAP direction]
-    D --> H[FP / TP metagene distributions]
-    D --> I[IVT and perturbation consistency checks]
+    A[14 technology signals] --> B[Total > 10]
+    B --> C[LOTO: leave one technology out]
+    B --> D[LOFO: leave one family out]
+    B --> E[Direct joint posterior<br/>TN · FN · FP · TP]
+    C --> F[Held-out reconstruction]
+    D --> F
+    E --> G[Feature-dependent RF tasks]
+    G --> H[Permutation importance<br/>+ exact SHAP direction]
+    E --> I[FP/TP metagene topology]
+    E --> J[IVT + perturbation consistency]
+
+    classDef input fill:#eaf2fb,stroke:#244a73,color:#12263a;
+    classDef model fill:#dfeaf7,stroke:#173b66,color:#12263a;
+    classDef result fill:#f8eee2,stroke:#b96b2c,color:#4b2a14;
+    class A,B input;
+    class C,D,E model;
+    class F,G,H,I,J result;
 ```
 
-The evidence chain deliberately separates internal signal reconstruction, model-derived error classes, feature-dependent discrimination, positional patterns and external consistency checks.
+## Analysis at a glance
 
-## Result figures
+| Evidence layer | Question | Frozen definition | Status |
+|---|---|---|---|
+| LOTO | Can 13 technologies reconstruct the 14th? | Held-out BBmix MAP, `Total>10`, common method domain | Complete: 14 folds |
+| LOFO | Can four technology families reconstruct the fifth? | Family-level retraining and five independent family units | Complete: 5 folds |
+| Four-class posterior | What is the joint model support for TN/FN/FP/TP? | Class-specific global FDR `<0.05`, unique calls, no fallback | Complete: 14 technologies |
+| Feature models | Are reliability/error states feature-dependent? | 185 features, chromosome-blocked 5-fold OOF, both classes `>50` | Complete: 26 models |
+| Direction | Which feature values move predictions toward TP or FP? | Exact RF reconstruction before SHAP | Complete: 11 core models |
+| Metagene | Do FP and TP occupy different transcript regions? | Standardized 5′UTR–CDS–3′UTR axis, both classes `>50` | Complete: 8 technologies |
+| External consistency | Are TP calls more IVT-supported or perturbation-responsive? | no-cali TP/FP labels; study-matched contrasts | Complete, mixed/negative evidence retained |
 
-![Summary of LOTO, LOFO and direct-posterior random-forest performance](figures/readme_results_summary.png)
+## Frozen analysis contract
 
-**Performance overview.** Circles denote AUROC and squares denote AUPRC. Panels **a** and **b** compare ConquerBN with four baseline integration methods using 14 held-out technologies and five independent held-out families, respectively. Panel **c** summarizes the completed direct-posterior random-forest tasks. Values are descriptive macro averages; detailed per-unit metrics and QC tables are retained in the corresponding analysis modules. [Source data](figures/source_data/readme_summary_metrics.csv) | [R plotting code](figures/code/plot_readme_summary.R) | [Vector PDF](figures/readme_results_summary.pdf)
+### Held-out benchmarks
 
-![FP and TP distributions along the standardized transcript metagene](analysis/04_metagene/results/main_figure/reliable_technologies_FP_vs_TP_standard_metagene.png)
+- **LOTO:** remove one technology, apply `Total>10` to retained evidence,
+  retrain ConquerBN and evaluate against the held-out technology's BBmix MAP
+  call (`m6ASiteProb>0.5` versus `<=0.5`, also `Total>10`).
+- **LOFO:** remove one complete technology family and retrain on the other four;
+  average technology metrics within family and treat the five families as the
+  independent units.
+- Compare ConquerBN, MeanProb, Rank Product, RRA and matching continuous IDR on
+  one common site domain. Vote is excluded.
 
-**Posterior-derived FP/TP metagene profiles.** Curves show the eight technologies meeting the teacher-approved running threshold on a standardized 5′UTR–CDS–3′UTR axis. Small FP groups, particularly m6A-SAC and DeepRM, remain exploratory and are interpreted cautiously. [Effect sizes and QC](analysis/04_metagene/results/effect_sizes/) | [R plotting code](analysis/04_metagene/code/06_plot_fp_tp_standard_metagene.R)
+### Direct four-class posterior
 
-## Final analysis scope
+For root state `R`, family Strategy state `S`, technology state `T` and evidence
+`e`:
 
-### 1. Leave-one-technology-out (LOTO)
+```text
+P(R=r,T=t|e) = sum_s P(R=r,S=s|e) × P(T=t,S=s|e) / P(S=s|e)
+```
 
-- Retrain ConquerBN after removing one technology.
-- Apply `Total > 10` to every retained technology-site observation before fitting.
-- Define held-out labels with the held-out technology BBmix MAP call:
-  `m6ASiteProb > 0.5` versus `<= 0.5`, also requiring held-out `Total > 10`.
-- Compare ConquerBN, MeanProb, RankProduct, RRA and continuous IDR on one common evaluation domain.
-- Vote is excluded.
+| `R` | `T` | Class | Code |
+|---:|---:|---|---:|
+| 0 | 0 | TN | 0 |
+| 1 | 0 | FN | 1 |
+| 0 | 1 | FP | 2 |
+| 1 | 1 | TP | 3 |
 
-### 2. Leave-one-family-out (LOFO)
+Each class is called separately with local error `1-P(class)` and cumulative
+global FDR `<0.05`. Only sites selected for exactly one class are retained,
+followed by technology-specific `Total>10`. There is **no MAP/Viterbi fallback**.
+The model is run only when both task classes contain more than 50 sites
+(`min_reliable=51`).
 
-- Hold out one complete technology family and retrain on the other four families.
-- Use the same BBmix MAP and `Total > 10` definition for each held-out technology.
-- First average technologies within each family; the five held-out families are the independent comparison units.
-
-### 3. Direct four-class posterior machine learning
-
-- Use the no-IVT-calibration, IVT-matched full ConquerBN model.
-- Directly reconstruct joint posteriors for `TN=(R0,T0)`, `FN=(R1,T0)`, `FP=(R0,T1)` and `TP=(R1,T1)`.
-- Call each class using class-specific global FDR `<0.05`; keep unique calls only.
-- Require technology-specific `Total > 10`; do not use MAP/Viterbi fallback.
-- Run a task when both compared classes contain more than 50 sites (`min_reliable=51`).
-- Use 185 OmicsFeatures, chromosome-blocked five-fold OOF validation, 300-tree random forests and permutation importance.
-
-### 4. FP/TP metagene and SHAP direction
-
-- Compare posterior-derived FP and TP locations on a standardized 5′UTR–CDS–3′UTR axis for eight eligible technologies.
-- Use exact random-forest reconstruction before SHAP; the saved OOF probabilities must be reproduced to numerical equality before directional interpretation.
+The no-IVT-calibration, IVT-matched full model is used here so later IVT
+comparisons do not reuse IVT-derived calibration information.
 
 ## Key results
 
-### LOTO: five-method common domain, all 14 technologies
+### Held-out reconstruction
 
-| Method | Macro AUROC | Macro AUPRC |
-|---|---:|---:|
-| ConquerBN | **0.7873** | **0.6785** |
-| MeanProb | 0.7812 | 0.6510 |
-| IDR | 0.7178 | 0.6032 |
-| RRA | 0.6912 | 0.5307 |
-| RankProduct | 0.6776 | 0.5234 |
+| Design | Method | AUROC | AUPRC |
+|---|---|---:|---:|
+| LOTO, 14 technologies | **ConquerBN** | **0.7873** | **0.6785** |
+|  | MeanProb | 0.7812 | 0.6510 |
+|  | IDR | 0.7178 | 0.6032 |
+|  | RRA | 0.6912 | 0.5307 |
+|  | Rank Product | 0.6776 | 0.5234 |
+| LOFO, 5 families | **ConquerBN** | **0.7679** | **0.6638** |
+|  | MeanProb | 0.7488 | 0.6233 |
+|  | IDR | 0.6709 | 0.5664 |
+|  | RRA | 0.6585 | 0.5033 |
+|  | Rank Product | 0.6414 | 0.4921 |
 
-### LOFO: five independent held-out families
+These are held-out signal-reconstruction benchmarks, not external biological
+truth.
 
-| Method | Family-macro AUROC | Family-macro AUPRC |
-|---|---:|---:|
-| ConquerBN | **0.7679** | **0.6638** |
-| MeanProb | 0.7488 | 0.6233 |
-| IDR | 0.6709 | 0.5664 |
-| RRA | 0.6585 | 0.5033 |
-| RankProduct | 0.6414 | 0.4921 |
-
-These are held-out signal-reconstruction benchmarks, not external biological truth.
-
-### Direct-posterior RF screening
+### Direct-posterior feature screening
 
 | Task | Completed technologies | Macro AUROC | Macro AUPRC |
 |---|---:|---:|---:|
@@ -91,23 +131,50 @@ These are held-out signal-reconstruction benchmarks, not external biological tru
 | FP vs TN | 7 | 0.7988 | 0.3163 |
 | TP vs TN | 11 | 0.9319 | 0.7676 |
 
-All 26 completed models passed OOF row-index, missing-value and probability-range checks. The feature export contains 26 model-specific Top20 tables (520 rows). `meta_tx_topology` was stable in 8/8 TP-vs-FP models and 7/7 FP-vs-TN models.
+All 26 completed models passed OOF row-identity, missing-value and probability
+range checks. The feature export contains 26 model-specific Top-20 tables (520
+rows). `meta_tx_topology` was stable in 8/8 TP-vs-FP models and 7/7 FP-vs-TN
+models.
 
-### Positional and external consistency analyses
+> [!CAUTION]
+> AUPRC follows positive-class prevalence. m6A-SAC (62 FP) and DeepRM (236 FP)
+> enter under the approved `>50` rule, but their TP-vs-FP AUPRC values are
+> dominated by extreme TP prevalence and must be interpreted beside AUROC and
+> class counts.
 
-- FP/TP metagene patterns were technology-specific rather than uniformly shifted.
-- m6A-SAC (62 FP) and DeepRM (236 FP) meet the teacher-approved running threshold but remain small-minority analyses and require cautious interpretation.
-- The MeRIP IVT 2-of-3 endpoint did **not** preferentially support the model-derived TP class: IVT-positive rates were 11.4% for TP and 16.7% for FP. This is retained as an important negative result, not hidden.
-- Perturbation responsiveness was contrast-dependent and did not provide a universal TP-over-FP advantage.
-- Exact SHAP reconstruction completed for 11 core TP-vs-FP/FP-vs-TN models; maximum raw and corrected OOF reproduction error was zero, and 105/110 inspected feature directions were stable across at least four folds.
+## Technology-specific transcript topology
 
-## Proposed integrative displays
+<p align="center">
+  <img src="analysis/04_metagene/results/main_figure/reliable_technologies_FP_vs_TP_standard_metagene.png"
+       width="960" alt="Posterior-derived FP and TP standardized metagene profiles">
+</p>
 
-These are next-step visualization designs enabled by the deposited results; they have not yet been generated and should not be confused with completed analyses.
+The eight eligible technologies show distinct rather than universal FP/TP
+shifts. Figure counts are the subset with valid metagene coordinates, so they can
+be slightly smaller than RF-domain counts. [Effect sizes and QC](analysis/04_metagene/results/effect_sizes/)
+· [plotting code](analysis/04_metagene/code/06_plot_fp_tp_standard_metagene.R)
 
-1. **Technology evidence landscape** — place each technology by held-out reconstruction performance and FP-vs-TN learnability, with point size showing FP count and colour showing technology family. This would reveal which technologies are both recoverable from orthogonal evidence and associated with predictable error structure.
-2. **Technology error atlas** — one card per technology combining four-class counts, task-specific AUROC/AUPRC, leading SHAP directions and the FP/TP metagene curve. This would preserve technology-specific patterns that disappear in a single macro-average.
-3. **Evidence-ladder figure** — connect LOTO/LOFO reconstruction, posterior class calling, feature-based discrimination, transcript-position patterns and IVT/perturbation validation in one figure. Positive and negative external findings should be shown together.
+## External consistency: negative findings are evidence too
+
+- The MeRIP IVT 2-of-3 endpoint did **not** preferentially support model-derived
+  TP: IVT-positive rates were 11.4% for TP and 16.7% for FP.
+- Writer/eraser perturbation response was contrast-dependent and did not show a
+  universal TP-over-FP advantage.
+- These results are retained rather than filtered away; IVT and perturbation are
+  independent consistency evidence, not perfect ground truth.
+
+## SURF poster
+
+<p align="center">
+  <a href="poster/SURF2026_Poster.pptx">
+    <img src="poster/SURF2026_Poster.png" width="820"
+         alt="SURF 2026 project poster preview">
+  </a>
+</p>
+
+The poster presents the full group project. This repository concentrates on the
+benchmarking, posterior-error modelling, feature interpretation and validation
+components. [Open the poster folder](poster/).
 
 ## Repository map
 
@@ -115,25 +182,41 @@ These are next-step visualization designs enabled by the deposited results; they
 analysis/
   01_loto_lofo/             final Total>10 LOTO/LOFO + IDR benchmark
   02_external_validation/   no-cali MeRIP IVT and perturbation analyses
-  03_direct_posterior_ml/   four-class global-FDR labels and RF screening
-  04_metagene/              eight-technology FP/TP metagene analysis
-  05_shap_direction/        exact RF reconstruction and SHAP directions
-docs/                       frozen protocols and concise reports
-data_catalogue/             input-object metadata and internal path catalogue
+  03_direct_posterior_ml/   direct four-class global-FDR labels + RF screening
+  04_metagene/              eight-technology FP/TP transcript topology
+  05_shap_direction/        exact RF reconstruction + SHAP directions
+data_catalogue/             final input paths and object contracts
+docs/                       frozen protocol and review reports
+figures/                    README performance figure and source data/code
+poster/                     SURF poster source and GitHub preview
 ```
 
-## Data availability
+Start with the module READMEs:
 
-The repository does not redistribute the ConquerNet benchmark RDS objects, IVT/perturbation datasets, fitted EM models, IDR matrices or OmicsFeatures object. See [`DATA_AVAILABILITY.md`](DATA_AVAILABILITY.md) for the required object contracts.
+1. [LOTO/LOFO](analysis/01_loto_lofo/README.md)
+2. [External validation](analysis/02_external_validation/README.md)
+3. [Direct posterior and ML](analysis/03_direct_posterior_ml/README.md)
+4. [Metagene](analysis/04_metagene/README.md)
+5. [SHAP direction](analysis/05_shap_direction/README.md)
 
-## Important interpretation boundary
+## Reproducibility and data
 
-`TP`, `FP`, `FN` and `TN` are ConquerBN posterior-derived internal classes unless an analysis explicitly references IVT or perturbation data. They must not be described as experimentally verified truth. Likewise, high AUROC describes ranking discrimination; it does not by itself establish probability calibration.
+- Exact execution order and constants: [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md)
+- Frozen final protocol: [`docs/FINAL_PROTOCOL.md`](docs/FINAL_PROTOCOL.md)
+- Final input/output provenance: [`data_catalogue/FINAL_DATA_PATHS.csv`](data_catalogue/FINAL_DATA_PATHS.csv)
+- Object contracts and exclusions: [`DATA_AVAILABILITY.md`](DATA_AVAILABILITY.md)
+- Release audit: [`docs/CODE_REVIEW_SNAPSHOT_20260827.md`](docs/CODE_REVIEW_SNAPSHOT_20260827.md)
 
-## Software
+## Interpretation boundary
 
-The analyses use R with `SummarizedExperiment`, `GenomicRanges`, `S4Vectors`, `bnlearn`, `matrixStats`, `extraDistr`, `ranger`, `pROC`, `PRROC`, `fastshap`, `dplyr`, `tidyr` and `ggplot2`.
+`TP`, `FP`, `FN` and `TN` are ConquerBN posterior-derived internal classes unless
+an analysis explicitly references IVT or perturbation data. They are not
+experimentally verified truth. Likewise, high AUROC measures discrimination; it
+does not by itself demonstrate calibrated real-world probability.
 
-## Release status
+---
 
-This is a public research snapshot of the finalized SURF analysis workflow. It is intended to make the computational route, compact audit evidence and current findings reviewable without redistributing the underlying sequencing data or fitted model objects. Results remain subject to supervisor/collaborator review and should not be treated as a final manuscript release.
+<p align="center">
+  <strong>SURF 2026 · Supervisor: Dr. Zhen Wei</strong><br>
+  <sub>Compact public research snapshot · results remain subject to collaborator review</sub>
+</p>

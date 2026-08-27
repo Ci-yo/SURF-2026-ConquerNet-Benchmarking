@@ -5,10 +5,12 @@
 1. Run the LOTO models and evaluation in `analysis/01_loto_lofo/code/`.
 2. Run the five LOFO models, then evaluate at technology level and summarize at family level.
 3. Fit or load the matching no-cali full model for external validation.
-4. Generate direct four-class posteriors and unique global-FDR calls.
-5. Run chromosome-blocked RF screening, summarize OOF results and export Top20 features.
-6. Generate metagene distributions and effect-size tables.
-7. Reconstruct the selected RF models exactly before computing SHAP directions.
+4. Run `analysis/03_direct_posterior_ml/code/run_calibration_min51.sh` to
+   generate direct four-class posteriors, unique global-FDR calls,
+   chromosome-blocked RF screening, OOF summaries and Top-20 exports.
+5. Run `analysis/04_metagene/code/run_B_min51.sh` to generate FP/TP effect sizes
+   and the final eight-technology standard-metagene figures.
+6. Reconstruct the selected RF models exactly before computing SHAP directions.
 
 ## Frozen constants
 

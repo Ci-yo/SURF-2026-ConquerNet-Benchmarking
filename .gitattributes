@@ -6,3 +6,4 @@
 *.tsv text eol=lf
 *.png binary
 *.pdf binary
+*.pptx binary

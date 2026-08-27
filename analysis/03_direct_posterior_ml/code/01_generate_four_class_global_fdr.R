@@ -8,7 +8,7 @@ suppressPackageStartupMessages({
 
 args <- commandArgs(trailingOnly = TRUE)
 script_arg <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
-if (!length(script_arg)) stop("Cannot determine current script path.")
+if (!length(script_arg)) stop("Please run this file with Rscript.")
 script_dir <- dirname(normalizePath(
   sub("^--file=", "", script_arg[[1L]]), winslash = "/"
 ))
@@ -29,10 +29,11 @@ downstream_coverage_cutoff <- if (length(args) >= 4L) {
 }
 smoke_n <- if (length(args) >= 5L) as.integer(args[[5L]]) else 0L
 
-helper_path <- if (length(args) >= 6L) {
-  args[[6L]]
-} else {
-  file.path(script_dir, "EM_function_2.R")
+helper_path <- if (length(args) >= 6L) args[[6L]] else {
+  normalizePath(
+    file.path(script_dir, "EM_function_2.R"),
+    winslash = "/", mustWork = FALSE
+  )
 }
 if (!file.exists(model_path)) stop("Missing model: ", model_path)
 if (!file.exists(helper_path)) stop("Missing inference helper: ", helper_path)

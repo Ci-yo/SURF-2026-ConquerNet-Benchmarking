@@ -35,7 +35,7 @@ parse_args <- function(x) {
       out$overwrite <- value %in% c("true", "1", "yes")
     } else if (arg %in% c("--help", "-h")) {
       cat(
-        "Usage: Rscript 05_export_week8_rf_features.R ",
+        "Usage: Rscript 04_export_rf_top20.R ",
         "[--summary-dir=DIR] [--output-dir=DIR] [--overwrite=true|false]\n",
         sep = ""
       )

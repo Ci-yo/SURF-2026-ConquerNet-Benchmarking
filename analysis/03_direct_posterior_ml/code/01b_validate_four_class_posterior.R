@@ -8,20 +8,25 @@ suppressPackageStartupMessages({
 
 args <- commandArgs(trailingOnly = TRUE)
 script_arg <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
-if (!length(script_arg)) stop("Cannot determine current script path.")
+if (!length(script_arg)) stop("Please run this file with Rscript.")
 script_dir <- dirname(normalizePath(
   sub("^--file=", "", script_arg[[1L]]), winslash = "/"
 ))
 model_path <- if (length(args) >= 1L) args[[1L]] else {
-  "/home/xiyao/15data/W7/03_no_cali_full_model/Total_gt_10/full_no_cali_Total_gt_10.conquernet.rds"
+  paste0(
+    "/home/xiyao/15data/W7/06_no_cali_IVT_matched_full_model/",
+    "Global_no_additional_coverage/full_no_cali_global.conquernet.rds"
+  )
 }
 n_smoke <- if (length(args) >= 2L) as.integer(args[[2L]]) else 5000L
-helper_path <- if (length(args) >= 3L) {
-  args[[3L]]
-} else {
-  file.path(script_dir, "EM_function_2.R")
+helper_path <- if (length(args) >= 3L) args[[3L]] else {
+  normalizePath(
+    file.path(script_dir, "EM_function_2.R"),
+    winslash = "/", mustWork = FALSE
+  )
 }
 
+if (!file.exists(helper_path)) stop("Missing inference helper: ", helper_path)
 source(helper_path)
 model <- readRDS(model_path)
 data <- readRDS(model$dataset_path)

@@ -39,4 +39,7 @@ full IDR matrices
 simulation objects without sampled site-level truth
 ```
 
-`data_catalogue/` records the internal objects used during the project. Internal paths are provenance notes, not public download links.
+`data_catalogue/FINAL_DATA_PATHS.csv` records the frozen inputs and outputs used
+by the current public snapshot. `INITIAL_DATA_PATHS.csv` is retained as a
+historical inventory and may include superseded branches. Internal paths are
+provenance notes, not public download links.
