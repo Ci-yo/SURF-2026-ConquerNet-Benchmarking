@@ -1,0 +1,7 @@
+"analysis_set","evaluation_domain","coverage_cutoff","coverage_rule","method","n_folds","mean_auroc","mean_auprc","mean_n","mean_positives","mean_negatives"
+"all_14_technologies","three_method_no_IDR_common_sensitivity",10,"Total>10","ConquerBN",14,0.777783464464407,0.665728089856995,728402.5,188488.714285714,539913.785714286
+"all_14_technologies","three_method_no_IDR_common_sensitivity",10,"Total>10","RankProduct",14,0.672074045068463,0.514617243862443,728402.5,188488.714285714,539913.785714286
+"all_14_technologies","three_method_no_IDR_common_sensitivity",10,"Total>10","RRA",14,0.685572496468236,0.521924229929505,728402.5,188488.714285714,539913.785714286
+"both_classes_ge_1000","three_method_no_IDR_common_sensitivity",10,"Total>10","ConquerBN",13,0.761371961351968,0.645841762588608,784409.692307692,202985.615384615,581424.076923077
+"both_classes_ge_1000","three_method_no_IDR_common_sensitivity",10,"Total>10","RankProduct",13,0.66540713758415,0.51877461776792,784409.692307692,202985.615384615,581424.076923077
+"both_classes_ge_1000","three_method_no_IDR_common_sensitivity",10,"Total>10","RRA",13,0.675041506238244,0.521840958194196,784409.692307692,202985.615384615,581424.076923077

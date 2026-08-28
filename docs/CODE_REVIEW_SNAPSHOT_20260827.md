@@ -9,13 +9,19 @@ posterior and `>50` class-size updates.
 - LOFO: five independent held-out technology families.
 - `Total>10`, held-out BBmix MAP truth, matching continuous IDR and common-site
   method comparisons.
-- Vote and Total>20 sensitivity outputs remain excluded.
+- Frozen comparison: ConquerBN, continuous IDR (`-rowmin`), RRA and Rank
+  Product. MeanProb, Vote and Total>20 sensitivity outputs remain excluded.
+- The combined input is a 2,788,705 × 14 `RangedSummarizedExperiment`; its
+  `m6ASiteProb` assay is a single-technology BBmix posterior and must not be
+  described as the ConquerNet `TrueM6A` posterior.
 
 ## Updated downstream branch
 
 - Direct joint posterior code: TN=0, FN=1, FP=2, TP=3.
 - Class-specific cumulative global FDR `<0.05` and exactly one selected class.
 - Technology-specific `Total>10`; no MAP/Viterbi fallback.
+- Frozen labels are stored as a 2,788,705 × 14 integer matrix
+  (`0=TN`, `1=FN`, `2=FP`, `3=TP`; `NA` means uncalled).
 - ML eligibility: both compared classes `>50` (integer minimum 51).
 - 26 completed technology-task RF models; all 26 OOF audits passed.
 - 26 Top-20 tables, totalling 520 model-feature rows.
@@ -39,4 +45,6 @@ posterior and `>50` class-size updates.
 Only small source code, audit tables, aggregate results, publication-quality
 figures and the SURF poster are tracked. Large raw objects, fitted models,
 per-site posterior matrices and OOF predictions are omitted; exact internal
-paths are recorded in `data_catalogue/FINAL_DATA_PATHS.csv`.
+paths are recorded in `data_catalogue/FINAL_DATA_PATHS.csv`, and their verified
+R types and statistical meanings are recorded in
+`data_catalogue/OBJECT_CONTRACTS.md`.

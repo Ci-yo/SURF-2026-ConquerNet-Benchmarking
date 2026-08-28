@@ -6,8 +6,10 @@ The primary PDF uses R's native Helvetica device so that text size can be audite
 
 The three panels report descriptive macro averages:
 
-- LOTO: 14 held-out technologies on the common ConquerBN/MeanProb/IDR/RRA/RankProduct domain;
-- LOFO: five independent held-out technology families;
+- LOTO: 14 held-out technologies on the common
+  ConquerBN/IDR/RRA/RankProduct domain;
+- LOFO: five independent held-out technology families on the same four-method
+  score set;
 - direct-posterior RF: eight TP-vs-FP, seven FP-vs-TN and eleven TP-vs-TN completed technology models.
 
 The figure does not show calibrated probabilities or uncertainty intervals. Per-unit metrics and QC tables remain in the corresponding `analysis/` modules.

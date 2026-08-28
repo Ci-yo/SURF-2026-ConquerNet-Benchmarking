@@ -1,31 +1,72 @@
 # Final LOTO and LOFO benchmark
 
+This module contains the frozen `Total>10` held-out benchmark described in the
+Week10 summary. The input is a `RangedSummarizedExperiment` with 2,788,705
+aligned sites and 14 technology columns. Its `m6A`, `Total`, `m6ASiteProb` and
+`AdjPvalue` assays are base R double matrices; the final benchmark label uses
+only the held-out technology's `m6ASiteProb` and `Total` assays.
+
 ## LOTO
 
-Each fold removes one technology completely, masks retained observations with `Total <= 10`, rebuilds the 13-technology DAG/CPT initialization and reruns EM. The score is the root posterior `P_LOTO(TrueM6A=1)`.
-
-Held-out truth is the held-out technology BBmix MAP label:
+Each fold removes one technology, applies `Total>10` to the retained
+technology-site observations, retrains ConquerBN on the remaining 13
+technologies and outputs
 
 ```text
-positive: m6ASiteProb > 0.5 and Total > 10
-negative: m6ASiteProb <= 0.5 and Total > 10
+P_LOTO(TrueM6A = 1 | evidence from the remaining technologies).
 ```
 
-ConquerBN, MeanProb, RankProduct, RRA and matched continuous IDR are evaluated on the same site domain.
+The held-out BBmix MAP label is:
+
+```text
+positive: held-out m6ASiteProb > 0.5 and held-out Total > 10
+negative: held-out m6ASiteProb <= 0.5 and held-out Total > 10
+```
+
+`m6ASiteProb` is the held-out **single-technology BBmix posterior**, not the
+ConquerBN `TrueM6A` posterior. The final primary comparison contains four
+continuous scores on one common evaluation domain:
+
+- ConquerBN root posterior probability;
+- continuous IDR score `-rowmin`;
+- Rank Product score;
+- RRA score.
+
+IDR, Rank Product and RRA are ranking scores, not calibrated probabilities.
+MeanProb and Vote are not part of the frozen Week10 comparison.
 
 ## LOFO
 
-Each model removes one complete technology family and trains on the remaining four families. Technology metrics are first averaged within the held-out family. Statistical comparison uses five independent family-level values.
+Each fold removes one complete technology family and retrains ConquerBN on the
+other four families. Every technology inside the held-out family is evaluated
+against its own BBmix MAP label under `Total>10`. Technology metrics are then
+averaged within family, and the five held-out families are the independent
+benchmark units.
 
-## Key files
+The IDR input must be the matching family-out result. Technology-out IDR is not
+substituted into LOFO.
 
-- `code/01_evaluate_loto_map_coverage.R`: retraining and MAP evaluation.
-- `code/02_run_loso.R`: historical filename for LOFO model training.
-- `code/03_evaluate_loso_map_coverage.R`: historical filename for LOFO evaluation.
-- `code/12_evaluate_loto_cutoff_matched_idr.R`: five-method LOTO common-domain evaluation.
-- `code/13_evaluate_lofo_cutoff_matched_idr.R`: five-method LOFO common-domain evaluation.
-- `results/LOTO/loto_five_method_cutoff_matched_summary.csv`: main LOTO ranking.
-- `results/LOFO/lofo_five_method_overall_summary.csv`: main five-family ranking.
-- `results/QC/`: convergence and model audits.
+## Clean execution
 
-The `loso` text in legacy filenames means the finalized leave-one-family-out analysis and is described as LOFO in reports.
+```bash
+Rscript analysis/01_loto_lofo/code/run_loto_benchmark.R
+Rscript analysis/01_loto_lofo/code/run_lofo_benchmark.R
+```
+
+Shared validation, ConquerBN fitting and summary functions are under
+`code/common_functions/`. New runs write to
+`analysis/01_loto_lofo/results/reproduced_run/` by default, leaving the compact
+reference results untouched.
+
+## Main result tables
+
+- `results/LOTO/four_method_IDR_summary.csv`
+- `results/LOTO/per_fold_metrics.csv`
+- `results/LOTO/evaluation_domain_audit.csv`
+- `results/LOFO/four_method_IDR_overall_summary.csv`
+- `results/LOFO/per_family_method_summary.csv`
+- `results/LOFO/per_technology_metrics.csv`
+- `results/QC/`
+
+The LOTO output also includes a three-method no-IDR sensitivity domain. The
+reported main LOTO numbers use the four-method IDR-common domain.

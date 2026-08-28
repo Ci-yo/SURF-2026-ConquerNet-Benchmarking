@@ -2,8 +2,9 @@
 
 ## Execution order
 
-1. Run the LOTO models and evaluation in `analysis/01_loto_lofo/code/`.
-2. Run the five LOFO models, then evaluate at technology level and summarize at family level.
+1. Run `Rscript analysis/01_loto_lofo/code/run_loto_benchmark.R`.
+2. Run `Rscript analysis/01_loto_lofo/code/run_lofo_benchmark.R`; evaluate at
+   technology level and summarize at the five-family level.
 3. Fit or load the matching no-cali full model for external validation.
 4. Run `analysis/03_direct_posterior_ml/code/run_calibration_min51.sh` to
    generate direct four-class posteriors, unique global-FDR calls,
@@ -23,6 +24,7 @@ RF folds: chromosome-blocked 5-fold
 RF trees: 300
 training cap: 100,000 per class
 Vote: excluded
+MeanProb: excluded from the frozen Week10 benchmark comparison
 ```
 
 ## Path configuration
@@ -31,7 +33,8 @@ Several scripts preserve the exact server defaults used to generate the archived
 
 ## Integrity checks
 
-- LOTO/LOFO methods are compared on common site domains.
+- The primary LOTO/LOFO comparison contains ConquerBN, continuous IDR, RRA and
+  Rank Product on common site domains.
 - LOFO inferential units are five families, not 14 technologies.
 - Four-class posteriors sum to one and recover the relevant marginal posteriors.
 - Unique global-FDR calls contain no class overlaps in the formal run.

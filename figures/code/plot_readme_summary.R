@@ -48,7 +48,7 @@ to_long <- function(data) {
   )
 }
 
-method_order <- c("ConquerBN", "MeanProb", "IDR", "RRA", "RankProduct")
+method_order <- c("ConquerBN", "IDR", "RRA", "RankProduct")
 task_order <- c("TP vs TN", "TP vs FP", "FP vs TN")
 metric_shapes <- c(AUROC = 16, AUPRC = 15)
 blue <- "#0072B2"
@@ -99,7 +99,7 @@ make_benchmark_panel <- function(data, title, subtitle) {
       aes(x = value, label = sprintf("%.3f", value), colour = highlight),
       nudge_x = 0.016,
       nudge_y = -0.13,
-      size = 2.0,
+      size = 2.3,
       hjust = 0,
       show.legend = FALSE
     ) +
@@ -108,7 +108,7 @@ make_benchmark_panel <- function(data, title, subtitle) {
       aes(x = value, label = sprintf("%.3f", value), colour = highlight),
       nudge_x = 0.016,
       nudge_y = 0.13,
-      size = 2.0,
+      size = 2.3,
       hjust = 0,
       show.legend = FALSE
     ) +
@@ -146,7 +146,7 @@ make_rf_panel <- function(data) {
       aes(x = value, label = sprintf("%.3f", value)),
       nudge_x = 0.016,
       nudge_y = -0.13,
-      size = 2.0,
+      size = 2.3,
       hjust = 0,
       show.legend = FALSE
     ) +
@@ -155,7 +155,7 @@ make_rf_panel <- function(data) {
       aes(x = value, label = sprintf("%.3f", value)),
       nudge_x = 0.016,
       nudge_y = 0.13,
-      size = 2.0,
+      size = 2.3,
       hjust = 0,
       show.legend = FALSE
     ) +
@@ -178,12 +178,12 @@ make_rf_panel <- function(data) {
 panel_a <- make_benchmark_panel(
   subset(metrics, evidence == "LOTO"),
   "Leave-one-technology-out",
-  "14 held-out technologies; common five-method domain"
+  "14 held-out technologies; common four-method domain"
 )
 panel_b <- make_benchmark_panel(
   subset(metrics, evidence == "LOFO"),
   "Leave-one-family-out",
-  "5 independent held-out technology families"
+  "5 independent families; common four-method domain"
 )
 panel_c <- make_rf_panel(subset(metrics, evidence == "RF"))
 
