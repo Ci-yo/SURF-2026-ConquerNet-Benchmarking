@@ -27,6 +27,43 @@
        alt="Final four-method LOTO and LOFO benchmarks plus direct-posterior random-forest screening">
 </p>
 
+## Step-by-step guide
+
+Start with the public archive; full model reproduction additionally requires
+research objects that are not distributed here.
+
+1. Install Git and Python 3.10+, then download the repository in a terminal:
+
+   ```bash
+   git clone https://github.com/Ci-yo/SURF-2026-ConquerNet-Benchmarking.git
+   cd SURF-2026-ConquerNet-Benchmarking
+   ```
+
+2. Check the retained files and benchmark summaries:
+
+   ```bash
+   python scripts/check_public_snapshot.py
+   ```
+
+   Success reports `Public snapshot checks passed` and prints 11 summary rows.
+   No R packages, GPU or private RDS inputs are needed for this check.
+
+3. Open the [summary CSV](figures/source_data/readme_summary_metrics.csv),
+   then inspect [per-fold LOTO results](analysis/01_loto_lofo/results/LOTO/per_fold_metrics.csv)
+   and [per-family LOFO results](analysis/01_loto_lofo/results/LOFO/per_family_method_summary.csv).
+
+4. Follow [Getting started](docs/GETTING_STARTED.md) to redraw the summary
+   figure, understand each output, or configure the full analysis.
+
+5. Before a full rerun, read [data availability](DATA_AVAILABILITY.md).
+   The original combined benchmark and the no-calibration IVT-matched branch
+   are distinct inputs. Internal server paths are provenance records, not
+   public download locations.
+
+The checksum check validates the public snapshot; it does not refit ConquerNet
+or regenerate per-site labels. The detailed guide includes prerequisites,
+execution order and troubleshooting for each reproduction level.
+
 ## Scientific question
 
 m6A technologies measure different biochemical signals and cannot be treated

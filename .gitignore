@@ -38,3 +38,7 @@ id_rsa*
 id_ed25519*
 .env
 .env.*
+
+# Python interpreter caches
+__pycache__/
+*.py[cod]
