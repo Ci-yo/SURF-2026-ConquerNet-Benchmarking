@@ -39,7 +39,7 @@ research objects that are not distributed here.
    cd SURF-2026-ConquerNet-Benchmarking
    ```
 
-2. Check the retained files and benchmark summaries:
+2. Check the benchmark summary tables:
 
    ```bash
    python scripts/check_public_snapshot.py

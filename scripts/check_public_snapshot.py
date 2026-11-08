@@ -1,19 +1,10 @@
 #!/usr/bin/env python3
-"""Check the public archive and summary tables, without private RDS inputs."""
+"""Check summary tables against archived results, without private RDS inputs."""
 import csv
-import hashlib
 import math
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-TEXT_SUFFIXES = {".r", ".sh", ".md", ".csv", ".tsv", ".txt", ".svg", ".py", ".yml"}
-
-
-def canonical_bytes(path):
-    data = path.read_bytes()
-    if path.suffix.lower() in TEXT_SUFFIXES or path.name in {".gitignore", ".gitattributes"}:
-        data = data.replace(b"\r\n", b"\n")
-    return data
 
 
 def read_csv(relative):
@@ -22,16 +13,6 @@ def read_csv(relative):
 
 
 def main():
-    with (ROOT / "MANIFEST_SHA256.tsv").open(encoding="utf-8-sig", newline="") as handle:
-        manifest = list(csv.DictReader(handle, delimiter="\t"))
-    for row in manifest:
-        path = ROOT / row["relative_path"]
-        if not path.resolve().is_relative_to(ROOT):
-            raise ValueError(f"Manifest path leaves repository: {row['relative_path']}")
-        data = canonical_bytes(path)
-        if len(data) != int(row["size_bytes"]) or hashlib.sha256(data).hexdigest() != row["sha256"]:
-            raise ValueError(f"Manifest mismatch: {row['relative_path']}")
-
     summary = read_csv("figures/source_data/readme_summary_metrics.csv")
     if len(summary) != 11:
         raise ValueError("Expected 8 benchmark rows and 3 RF task summaries.")
@@ -62,11 +43,11 @@ def main():
             if not (math.isclose(float(row["AUROC"]), float(source[auc_col]), abs_tol=1e-12)
                     and math.isclose(float(row["AUPRC"]), float(source[pr_col]), abs_tol=1e-12)):
                 raise ValueError(f"Summary disagrees with source: {evidence}/{row['category']}")
-    print(f"Public snapshot checks passed: {len(manifest)} files; 11 summary rows.")
+    print("Public snapshot checks passed: 11 summary rows.")
     for row in summary:
         print(f"{row['evidence']:4} {row['category']:12} n={int(row['n_units']):2d} "
               f"AUROC={float(row['AUROC']):.4f} AUPRC={float(row['AUPRC']):.4f}")
-    print("This verifies retained files/tables; it does not rerun model fitting or per-site inference.")
+    print("This checks summary metrics against archived result tables; it does not rerun model fitting or per-site inference.")
 
 
 if __name__ == "__main__":

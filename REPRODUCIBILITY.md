@@ -1,7 +1,7 @@
 # Reproducibility notes
 
 Start with [the step-by-step guide](docs/GETTING_STARTED.md) for environment
-setup, the public archive check, expected outputs and troubleshooting.
+setup, the summary-table check, expected outputs and troubleshooting.
 The execution order below assumes the external research inputs are already
 available and all server paths have been configured.
 

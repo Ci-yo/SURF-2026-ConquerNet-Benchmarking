@@ -16,23 +16,16 @@ python --version
 Alternatively, use Code → Download ZIP and extract the entire archive. Run
 subsequent commands from the folder containing `README.md`.
 
-## 2. Verify the public snapshot
+## 2. Check the summary tables
 
 ```bash
 python scripts/check_public_snapshot.py
 ```
 
-There are no Python package dependencies. Success reports the checked manifest
-file count and 11 summary rows, then prints the LOTO, LOFO and RF summary
-metrics. This checks file integrity and checks the eight benchmark summary
-rows against their retained source tables. It does not refit any model or
-reconstruct per-site predictions.
-
-`MANIFEST_SHA256.tsv` records SHA-256 and byte size. Text files are compared
-with LF line endings so Windows checkout conversion does not create false
-failures; binary files are compared byte-for-byte. A deliberate source edit or
-plot rerun can change a checksum. Preserve the published manifest for comparison;
-do not dismiss an unexplained mismatch.
+There are no Python package dependencies. Success reports 11 summary rows,
+then prints the LOTO, LOFO and RF summary metrics. The check validates the
+metric ranges and compares the eight benchmark summary rows with their source
+tables. It does not refit any model or reconstruct per-site predictions.
 
 ## 3. Read the results in the correct order
 
@@ -116,8 +109,8 @@ The frozen constants and required audits are in
 | Symptom | Action |
 |---|---|
 | `python` is not found on Windows | Try `py --version` or add Python to PATH. |
-| A manifest file is missing | Download the complete repository; do not copy just the README and scripts. |
-| Hash mismatch after your edits | Compare with a fresh clone; the check validates the published snapshot. |
+| A result table is missing | Download the complete repository; do not copy just the README and scripts. |
+| Summary metrics disagree with the source tables | Check that the summary and source tables come from the same analysis run. |
 | `Rscript` is not found | Install R and add its `bin` directory to PATH. |
 | `/home/...` path does not exist | You reached a full-analysis entry point with server defaults. Prepare the missing objects and configure paths first. |
 | Public checks pass but model fitting cannot run | These are different levels of verification; the archive does not include the training objects. |
